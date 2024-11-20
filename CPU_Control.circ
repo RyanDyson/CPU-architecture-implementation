@@ -68,7 +68,7 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <main name="main"/>
+  <main name="Control"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -101,15 +101,117 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="main">
+  <circuit name="Control">
     <a name="appearance" val="classic"/>
-    <a name="circuit" val="main"/>
+    <a name="circuit" val="Control"/>
     <a name="circuitnamedboxfixedsize" val="false"/>
     <a name="clabel" val=""/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
     <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(200,320)" name="Pin">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(450,120)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Mem_to_Reg"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Mem_Write"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Clock_Stop"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,270)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Write_ra"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,320)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Read_ra"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,370)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Reg_Write"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,420)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Branch"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,470)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="ALU_op1"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,520)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="ALU_op2"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,570)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="ALU_Src"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(450,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Mem_Read"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp loc="(430,120)" name="MemtoReg"/>
+    <comp loc="(430,170)" name="MemWrite"/>
+    <comp loc="(430,220)" name="Clock_Stop_8053a739"/>
+    <comp loc="(430,270)" name="Write_ra_f61e1106"/>
+    <comp loc="(430,320)" name="Read_ra_849e8755"/>
+    <comp loc="(430,370)" name="RegWrite"/>
+    <comp loc="(430,420)" name="B_ranch"/>
+    <comp loc="(430,470)" name="ALUop1"/>
+    <comp loc="(430,520)" name="ALUop2"/>
+    <comp loc="(430,570)" name="ALUSrc"/>
+    <comp loc="(430,70)" name="MemRead"/>
+    <wire from="(200,320)" to="(270,320)"/>
+    <wire from="(270,120)" to="(270,170)"/>
+    <wire from="(270,120)" to="(400,120)"/>
+    <wire from="(270,170)" to="(270,220)"/>
+    <wire from="(270,170)" to="(400,170)"/>
+    <wire from="(270,220)" to="(270,270)"/>
+    <wire from="(270,220)" to="(400,220)"/>
+    <wire from="(270,270)" to="(270,320)"/>
+    <wire from="(270,270)" to="(400,270)"/>
+    <wire from="(270,320)" to="(270,370)"/>
+    <wire from="(270,320)" to="(400,320)"/>
+    <wire from="(270,370)" to="(270,420)"/>
+    <wire from="(270,370)" to="(400,370)"/>
+    <wire from="(270,420)" to="(270,470)"/>
+    <wire from="(270,420)" to="(400,420)"/>
+    <wire from="(270,470)" to="(270,520)"/>
+    <wire from="(270,470)" to="(400,470)"/>
+    <wire from="(270,520)" to="(270,570)"/>
+    <wire from="(270,520)" to="(400,520)"/>
+    <wire from="(270,570)" to="(400,570)"/>
+    <wire from="(270,70)" to="(270,120)"/>
+    <wire from="(270,70)" to="(400,70)"/>
+    <wire from="(430,120)" to="(450,120)"/>
+    <wire from="(430,170)" to="(450,170)"/>
+    <wire from="(430,220)" to="(450,220)"/>
+    <wire from="(430,270)" to="(450,270)"/>
+    <wire from="(430,320)" to="(450,320)"/>
+    <wire from="(430,370)" to="(450,370)"/>
+    <wire from="(430,420)" to="(450,420)"/>
+    <wire from="(430,470)" to="(450,470)"/>
+    <wire from="(430,520)" to="(450,520)"/>
+    <wire from="(430,570)" to="(450,570)"/>
+    <wire from="(430,70)" to="(450,70)"/>
   </circuit>
   <circuit name="MemRead">
     <a name="appearance" val="classic"/>
@@ -119,7 +221,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(100,160)" name="Pin">
       <a name="width" val="4"/>
     </comp>
@@ -157,7 +259,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(100,160)" name="Pin">
       <a name="width" val="4"/>
     </comp>
@@ -195,7 +297,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(100,160)" name="Pin">
       <a name="width" val="4"/>
     </comp>
@@ -232,7 +334,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(100,160)" name="Pin">
       <a name="width" val="4"/>
     </comp>
@@ -265,7 +367,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(100,160)" name="Pin">
       <a name="width" val="4"/>
     </comp>
@@ -300,7 +402,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(100,160)" name="Pin">
       <a name="width" val="4"/>
     </comp>
@@ -335,7 +437,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(300,120)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -412,15 +514,15 @@
     <wire from="(230,140)" to="(250,140)"/>
     <wire from="(60,160)" to="(80,160)"/>
   </circuit>
-  <circuit name="Branch">
+  <circuit name="B_ranch">
     <a name="appearance" val="classic"/>
-    <a name="circuit" val="Branch"/>
+    <a name="circuit" val="B_ranch"/>
     <a name="circuitnamedboxfixedsize" val="false"/>
     <a name="clabel" val=""/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(350,120)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -508,7 +610,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(240,90)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -568,7 +670,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(290,100)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -645,7 +747,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelup" val="east"/>
     <a name="downloadFrequency" val="-1.0"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="-1.0"/>
     <comp lib="0" loc="(290,260)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -706,5 +808,16 @@
     <wire from="(220,280)" to="(220,310)"/>
     <wire from="(220,280)" to="(230,280)"/>
     <wire from="(280,260)" to="(290,260)"/>
+  </circuit>
+  <circuit name="test">
+    <a name="appearance" val="classic"/>
+    <a name="circuit" val="test"/>
+    <a name="circuitnamedboxfixedsize" val="false"/>
+    <a name="clabel" val=""/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="clabelup" val="east"/>
+    <a name="downloadFrequency" val="-1.0"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp loc="(330,230)" name="Control"/>
   </circuit>
 </project>
